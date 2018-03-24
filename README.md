@@ -5,7 +5,7 @@ An attempt to replicate the paper "Learning to Generalize: Meta-Learning for Dom
 Prerequisites:
 - Tensorflow (Code only tested for version r1.6)
 
-Sourceonly folder contains the code for Deep-all model. MLDG folder contains the code for the meta learning approach.
+source_only folder contains the code for Deep-all model. MLDG folder contains the code for the meta learning approach.
 Please download PACS dataset (http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017)
 
 To run the sourceonly model, go to source_only folder and run 

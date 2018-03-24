@@ -141,8 +141,8 @@ class MAML:
                 gradients2 = tf.gradients(self.total_loss1 + self.total_losses2[FLAGS.num_updates-1], var_list2)
                 gradients2 = list(zip(gradients2, var_list2))
             
-                gradients1 = [(tf.clip_by_value(grad, -0.5, 0.5), var) for grad, var in gradients1]
-                gradients2 = [(tf.clip_by_value(grad, -0.5, 0.5), var) for grad, var in gradients2]
+                gradients1 = [(tf.clip_by_value(grad, -5, 5), var) for grad, var in gradients1]
+                gradients2 = [(tf.clip_by_value(grad, -5, 5), var) for grad, var in gradients2]
                 train_op1 = optimizer1.apply_gradients(grads_and_vars=gradients1, global_step=global_step)
                 train_op2 = optimizer2.apply_gradients(grads_and_vars=gradients2, global_step=global_step)
                 self.metatrain_op = tf.group(train_op1, train_op2)
